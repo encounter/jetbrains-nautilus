@@ -1,9 +1,13 @@
 #!/bin/bash
+# Originally from https://github.com/harry-cpp/code-nautilus/blob/master/install.sh
 
 # Install python-nautilus
 echo "Installing python-nautilus..."
 if type "pacman" >/dev/null 2>&1; then
-  sudo pacman -S --noconfirm python-nautilus
+  pacman -Qs python-nautilus &>/dev/null
+  if [ $? -eq 1 ]; then
+    sudo pacman -S --noconfirm --needed python-nautilus
+  fi
 elif type "apt-get" >/dev/null 2>&1; then
   installed=$(apt list --installed python-nautilus -qq 2>/dev/null)
   if [ -z "$installed" ]; then
