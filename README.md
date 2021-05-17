@@ -11,6 +11,8 @@ Inspired by & installation script from [code-nautilus](https://github.com/harry-
 
 ## Automatic installation
 
+Available in [Arch Linux AUR (jetbrains-nautilus-git)](https://aur.archlinux.org/packages/jetbrains-nautilus-git), otherwise:
+
 ```
 wget -qO- https://raw.githubusercontent.com/encounter/jetbrains-nautilus/master/install.sh | bash
 ```
